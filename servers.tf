@@ -11,43 +11,43 @@ data "aws_security_group" "allow-all" {
 variable "components"{
     default = {
         frontend = {
-            name = "frontend"
+            Name = "frontend"
             instance_type = "t3.small"
         }
         mongodb = {
-                    name = "mongodb"
+                    Name = "mongodb"
                     instance_type = "t3.small"
         }
         catalogue = {
-                    name = "catalogue"
+                    Name = "catalogue"
                     instance_type = "t3.small"
         }
         redis = {
-                    name = "redis"
+                    Name = "redis"
                     instance_type = "t3.small"
         }
         user = {
-                    name = "user"
+                    Name = "user"
                     instance_type = "t3.small"
         }
         cart = {
-                    name = "cart"
+                    Name = "cart"
                     instance_type = "t3.small"
         }
         shipping = {
-                    name = "shipping"
+                    Name = "shipping"
                     instance_type = "t3.medium"
         }
         mysql = {
-                    name = "mysql"
+                    Name = "mysql"
                     instance_type = "t3.small"
         }
         rabbitmq = {
-                    name = "rabbitmq"
+                    Name = "rabbitmq"
                     instance_type = "t3.small"
         }
         payment = {
-                    name = "payment"
+                    Name = "payment"
                     instance_type = "t3.small"
         }
     }
@@ -60,7 +60,15 @@ resource "aws_instance" "instance" {
     vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
 
     tags  = {
-        name = each.value["name"]
+        Name = each.value["name"]
     }
 }
 
+resource "aws_route53_record" "records" {
+    for_each = var.components
+    zone_id  = "Z03901213Q1RUE72GTM7"
+    name = "${each.value["name"]}-dev.devopz1.online"
+    type = "A"
+    ttl = 30
+    records = [aws_instance.instance[each.value["name"]].private_ip]
+    }
