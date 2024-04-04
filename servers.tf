@@ -17,9 +17,9 @@ provisioner "remote-exec" {
         host = self.private_ip
     }
     inline = [
-       "rm -rf Roboshop"
-       "git clone https://github.com/LavanyaRamesh319/Roboshop.git"
-       "cd Roboshop"
+       "rm -rf Roboshop",
+       "git clone https://github.com/LavanyaRamesh319/Roboshop.git",
+       "cd Roboshop",
        "sudo bash ${each.value["name"]}.sh"
        ]
 }
