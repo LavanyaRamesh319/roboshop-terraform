@@ -30,7 +30,7 @@ resource "null_resource" "provisioner" {
        "sudo bash ${each.value["name"]}.sh"
     ]
   }
-
+}
 resource "aws_route53_record" "records" {
     for_each = var.components
     zone_id  = "Z03901213Q1RUE72GTM7"
