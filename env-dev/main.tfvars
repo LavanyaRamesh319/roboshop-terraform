@@ -26,6 +26,7 @@ components = {
         shipping = {
                     name = "shipping"
                     instance_type = "t3.medium"
+                    password = "roboshop123"
         }
         mysql = {
                     name = "mysql"
