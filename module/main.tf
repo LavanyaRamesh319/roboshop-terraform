@@ -29,7 +29,7 @@ resource "null_resource" "provisioner" {
   }
 }
 resource "aws_route53_record" "records" {
-    zone_id  = "Z03901213Q1RUE72GTM7"
+    zone_id  = "Z01616252I47825AMYFK4"
     name = "${var.component_name}-dev.devopz1.online"
     type = "A"
     ttl = 30
