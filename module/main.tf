@@ -10,8 +10,8 @@ resource "aws_instance" "instance" {
 
 resource "null_resource" "provisioner" {
   depends_on = [aws_instance.instance, aws_route53_record.records]
-
   provisioner "remote-exec" {
+
     connection {
         type = "ssh"
         user = "centos"
@@ -22,6 +22,7 @@ resource "null_resource" "provisioner" {
     inline = var.app_type == "db" ? local.db_commands : local.app_commands
   }
 }
+
 resource "aws_route53_record" "records" {
     zone_id  = "Z01616252I47825AMYFK4"
     name = "${var.component_name}-dev.devopz1.online"
