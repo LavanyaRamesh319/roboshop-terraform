@@ -1,21 +1,21 @@
 app_servers = {
         frontend = {
             name = "frontend"
-            instance_type = "t3.small"
+            instance_type = "t3.medium"
         }
 
         catalogue = {
                     name = "catalogue"
-                    instance_type = "t3.small"
+                    instance_type = "t3.medium"
         }
 
         user = {
                     name = "user"
-                    instance_type = "t3.small"
+                    instance_type = "t3.medium"
         }
         cart = {
                     name = "cart"
-                    instance_type = "t3.small"
+                    instance_type = "t3.medium"
         }
         shipping = {
                     name = "shipping"
@@ -25,7 +25,7 @@ app_servers = {
 
         payment = {
                     name = "payment"
-                    instance_type = "t3.small"
+                    instance_type = "t3.medium"
                     password = "roboshop123"
 
         }
