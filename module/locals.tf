@@ -9,6 +9,6 @@ locals {
  app_commands = [
 #      "sudo labauto ansible",
 #      "ansible-pull -i localhost, -U https://github.com/LavanyaRamesh319/roboshop-ansible roboshop.yml -e env=${var.env} -e role_name=${var.component_name}"
-      "echo ok"
+        "echo OK"
     ]
 }
