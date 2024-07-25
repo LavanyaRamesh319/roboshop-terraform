@@ -1,4 +1,8 @@
 env = "dev"
+bastion_cidr = ["172.31.31.227/32"]
+default_vpc_id = "vpc-079e0c9e4bd1da0cb"
+default_vpc_cidr = "172.31.0.0/16"
+default_vpc_rtid = "rtb-028b59719dd99d45a"
 vpc = {
   main = {
     cidr_block = "10.0.0.0/16"
@@ -35,11 +39,16 @@ app = {
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
+    allow_app_cidr = "public"
   }
   catalogue = {
     name = "catalogue"
     instance_type = "t3.small"
     subnet_name = "app"
+    desired_capacity   = 2
+    max_size           = 10
+    min_size           = 2
+    allow_app_cidr = "web"
   }
   cart = {
     name = "cart"
