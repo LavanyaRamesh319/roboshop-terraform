@@ -5,3 +5,6 @@ variable "bastion_cidr" {}
 variable "default_vpc_id" {}
 variable "default_vpc_cidr" {}
 variable "default_vpc_rtid" {}
+variable "desired_capacity" {}
+variable "max_size" {}
+variable "min_size" {}
