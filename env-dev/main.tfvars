@@ -4,6 +4,9 @@ default_vpc_id = "vpc-079e0c9e4bd1da0cb"
 default_vpc_cidr = "172.31.0.0/16"
 default_vpc_rtid = "rtb-028b59719dd99d45a"
 kms_arn = "arn:aws:kms:us-east-1:211125447574:key/bc770a11-96d3-4f3a-8ce2-2856e8e6c0ca"
+domain_name = "devopz1.online"
+domain_id = "Z01616252I47825AMYFK4"
+
 vpc = {
   main = {
     cidr_block = "10.0.0.0/16"
@@ -37,19 +40,25 @@ app = {
     name             = "frontend"
     instance_type    = "t3.small"
     subnet_name      = "web"
-    desired_capacity = 2
+    desired_capacity = 1
     max_size         = 10
-    min_size         = 2
+    min_size         = 1
     allow_app_cidr   = "public"
+    app_port = 80
+    listener_priority = 1
+    lb_type = "public"
   }
   catalogue = {
     name             = "catalogue"
     instance_type    = "t3.small"
     subnet_name      = "app"
-    desired_capacity = 2
+    desired_capacity = 1
     max_size         = 10
-    min_size         = 2
+    min_size         = 1
     allow_app_cidr   = "web"
+    app_port = 8080
+    listener_priority = 1
+    lb_type = "private"
   }
 }
 #  cart = {
