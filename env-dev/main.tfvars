@@ -1,12 +1,12 @@
 env              = "dev"
 monitor_cidr     = ["172.31.12.74/32"]
 bastion_cidr     = ["172.31.11.111/32"]
-default_vpc_id   = "vpc-0a8e3e6a0d6cb90d9"
+default_vpc_id   = "vpc-079e0c9e4bd1da0cb"
 default_vpc_cidr = "172.31.0.0/16"
-default_vpc_rtid = "rtb-0b9a867762d6530ba"
-kms_arn          = "arn:aws:kms:us-east-1:633788536644:key/dce90622-5a23-4f82-a639-be841f534702"
-domain_name      = "rdevopsb72.online"
-domain_id        = "Z03986262CQPCHNJNZM9L"
+default_vpc_rtid = "rtb-028b59719dd99d45a"
+kms_arn          = "arn:aws:kms:us-east-1:211125447574:key/bc770a11-96d3-4f3a-8ce2-2856e8e6c0ca"
+domain_name      = "devopz1.online"
+domain_id        = "Z01616252I47825AMYFK4"
 
 
 vpc = {
